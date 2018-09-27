@@ -78,14 +78,17 @@ const login = (req, res) => {
             {
               id: data._id,
               name: data.name,
-              email: data.email
+              email: data.email,
+              username: data.username
             },
             process.env.jwt_secret
           );
           res.status(200).json({
             message: `Login Success!`,
             token: token,
-            email: data.email
+            email: data.email,
+            username: data.username,
+            name: data.name
           });
         } else {
           res.status(400).json({

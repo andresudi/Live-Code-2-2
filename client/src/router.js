@@ -15,6 +15,7 @@ export default new Router({
       children: 
       [
         { path: '/', component: () => import('./components/Tweet.vue')},
+        { path: '/search', component: () => import('./components/TweetSearch.vue')},
       ]
     },
     {
@@ -24,6 +25,6 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    }
+    },
   ]
 })

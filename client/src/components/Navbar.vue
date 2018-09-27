@@ -1,7 +1,10 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Victwitter</a>
+            <router-link :to="`/`">
+                <a class="navbar-brand">Victwitter</a>
+            </router-link>
+    
             <div class="header-right row" v-if="!isLogin">
                 <input type="text" placeholder="username / email" v-model="acc">
                 <input type="password" placeholder="password" v-model="password">
@@ -12,7 +15,7 @@
         <div v-if="errMessage" class="alert alert-primary" role="alert">
             {{errMessage}}
         </div>
-         <div v-if="notif" class="alert alert-primary" role="alert">
+        <div v-if="notif" class="alert alert-primary" role="alert">
             {{notif}}
         </div>
     </nav>
@@ -45,7 +48,7 @@
                     acc: this.acc
                 };
                 console.log(obj);
-
+    
                 this.login(obj);
             },
     
